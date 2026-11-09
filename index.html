@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101a30">
+  <meta name="description" content="Lær Python dictionaries med korte forklaringer, interaktive kodeopgaver og en afsluttende quiz på dansk.">
+  <title>DictLab — Lær Python dictionaries</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23101a30'/%3E%3Cpath d='M17 19h11l-8 13 8 13H17L9 32z' fill='%233776ab'/%3E%3Cpath d='M47 19H36l8 13-8 13h11l8-13z' fill='%23ffd343'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Spring til indhold</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#forside" aria-label="DictLab forside">
+        <span class="brand-mark" aria-hidden="true"><span>{</span><span>}</span></span>
+        <span>Dict<span class="brand-accent">Lab</span><span class="brand-dot">.</span></span>
+      </a>
+      <nav class="primary-nav" aria-label="Hovedmenu">
+        <a href="#laer" data-nav="laer">Lær</a>
+        <a href="#traen" data-nav="traen">Træn</a>
+        <a href="#quiz" data-nav="quiz">Quiz</a>
+      </nav>
+      <div class="header-progress" aria-label="Dine gennemførte kodeopgaver">
+        <span class="progress-mini-label">Din fremgang</span>
+        <div class="progress-mini-track"><span id="header-progress-fill"></span></div>
+        <strong id="header-progress-value">0/8</strong>
+      </div>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero" id="forside">
+      <div class="hero-glow"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> PYTHON · INTERAKTIVT LÆRINGSFORLØB</p>
+          <h1>Lær <span>dictionaries</span><br>ved at bruge dem.</h1>
+          <p class="hero-lead">Få styr på nøgler, værdier og de vigtigste metoder. Du lærer lidt ad gangen, skriver selv Python-kode og finder ud af, hvad du kan.</p>
+          <div class="hero-actions">
+            <a class="button button-yellow" href="#laer">Start undervisningen <span aria-hidden="true">↗</span></a>
+            <a class="button button-outline" href="#traen">Gå til kodeopgaver</a>
+          </div>
+          <div class="hero-meta">
+            <span><span class="meta-symbol" aria-hidden="true">◷</span> 25–40 minutter</span>
+            <span><span class="meta-symbol" aria-hidden="true">⌘</span> Begynder</span>
+            <span><span class="meta-symbol" aria-hidden="true">✓</span> Lær i dit tempo</span>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="editor-window hero-editor" aria-label="Eksempel på en dictionary i Python">
+            <div class="window-bar">
+              <div class="window-lights"><i></i><i></i><i></i></div>
+              <span>min_foerste_dictionary.py</span><span class="window-lang">PY</span>
+            </div>
+            <div class="hero-code" aria-hidden="true">
+              <div><em>01</em><span class="syntax-comment"># En dictionary samler oplysninger</span></div>
+              <div><em>02</em><span class="syntax-var">elev</span> = {</div>
+              <div><em>03</em>&nbsp;&nbsp;<span class="syntax-string">"navn"</span>: <span class="syntax-string">"Emma"</span>,</div>
+              <div><em>04</em>&nbsp;&nbsp;<span class="syntax-string">"alder"</span>: <span class="syntax-number">12</span>,</div>
+              <div><em>05</em>&nbsp;&nbsp;<span class="syntax-string">"klasse"</span>: <span class="syntax-string">"6.A"</span></div>
+              <div><em>06</em>}</div>
+              <div><em>07</em>&nbsp;</div>
+              <div><em>08</em><span class="syntax-call">print</span>(<span class="syntax-var">elev</span>[<span class="syntax-string">"navn"</span>])</div>
+            </div>
+            <div class="hero-output"><span>› output</span><strong>Emma</strong><span class="output-cursor"></span></div>
+          </div>
+          <div class="floating-tag"><span class="floating-icon">{ }</span><span><strong>key : value</strong><small>Grundstenen i en dictionary</small></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="overview-band" aria-label="Forløbets tre dele">
+      <div class="container overview-grid">
+        <div class="overview-item"><span class="overview-number">01</span><div><strong>Forstå princippet</strong><span>Korte forklaringer og eksempler</span></div></div>
+        <div class="overview-item"><span class="overview-number">02</span><div><strong>Skriv kode selv</strong><span>8 opgaver med automatisk tjek</span></div></div>
+        <div class="overview-item"><span class="overview-number">03</span><div><strong>Tjek din viden</strong><span>10 spørgsmål med feedback</span></div></div>
+      </div>
+    </section>
+
+    <section class="section section-learn" id="laer">
+      <div class="container">
+        <div class="section-heading"><div><p class="section-kicker">DEL 01 / LÆR</p><h2>Forstå dictionaries</h2><p>Fem korte lektioner. Læs forklaringen, se eksemplet, og prøv koden, hvis du har lyst.</p></div><span class="section-count">5 lektioner</span></div>
+        <div class="learn-layout">
+          <aside class="lesson-sidebar" aria-label="Vælg lektion">
+            <div class="sidebar-title">DIT LÆRINGSFORLØB</div>
+            <div id="lesson-list" class="lesson-list"></div>
+            <div class="sidebar-note"><span class="note-icon">i</span><span>Du kan altid hoppe mellem lektioner. Dit arbejde gemmes i denne browser.</span></div>
+          </aside>
+          <article class="lesson-content panel" aria-live="polite">
+            <div class="lesson-topline"><span id="lesson-counter"></span><span id="lesson-time"></span></div>
+            <h3 id="lesson-title"></h3>
+            <div id="lesson-prose" class="prose"></div>
+            <div class="example-header"><strong><span class="code-square">⌘</span> Python-eksempel</strong><span>main.py</span></div>
+            <pre class="code-example"><code id="lesson-code"></code></pre>
+            <div class="example-actions"><button type="button" class="text-button" id="copy-example">Kopiér kode</button><button type="button" class="text-button text-button-accent" id="run-example">Kør eksemplet <span aria-hidden="true">↗</span></button></div>
+            <div id="example-feedback" class="example-feedback" hidden aria-live="polite"></div>
+            <div class="key-point"><span class="key-point-icon">!</span><div><strong>Det skal du huske</strong><p id="lesson-keypoint"></p></div></div>
+            <div class="lesson-footer"><button type="button" class="button button-soft" id="prev-lesson">← Forrige</button><button type="button" class="button button-blue" id="next-lesson">Næste lektion →</button></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-practice" id="traen">
+      <div class="container">
+        <div class="section-heading"><div><p class="section-kicker">DEL 02 / TRÆN</p><h2>Nu skriver du koden</h2><p>Otte opgaver med stigende sværhedsgrad. Kør din kode og få præcis feedback, når du tjekker løsningen.</p></div><span class="section-count">8 kodeopgaver</span></div>
+        <div class="practice-head"><div><span class="practice-status-dot"></span> PYTHON-ARBEJDSPLADS <span class="practice-separator">/</span> <span id="engine-status">Starter Python-motoren …</span></div><span>Tip: Ctrl + Enter kører koden</span></div>
+        <div class="practice-layout">
+          <aside class="task-sidebar panel" aria-label="Vælg kodeopgave">
+            <div class="task-sidebar-title">OPGAVER <span id="task-total-label">0 / 8 løst</span></div>
+            <div class="task-progress-track"><span id="task-progress-fill"></span></div>
+            <div id="task-list" class="task-list"></div>
+          </aside>
+          <div class="workspace">
+            <div class="task-card panel">
+              <div class="task-topline"><span id="task-number"></span><span id="task-difficulty" class="difficulty"></span></div>
+              <h3 id="task-title"></h3><p id="task-description" class="task-description"></p>
+              <div class="task-goal"><span class="goal-icon">✓</span><span id="task-goal"></span></div>
+              <button class="hint-toggle" type="button" id="hint-toggle" aria-expanded="false">Få et hint <span aria-hidden="true">⌄</span></button>
+              <div id="task-hint" class="hint-content" hidden></div>
+            </div>
+            <div class="coding-panel panel">
+              <div class="coding-header"><span><span class="file-indicator"></span> løsning.py</span><span class="code-language">PYTHON 3</span></div>
+              <label class="visually-hidden" for="code-editor">Skriv din Python-kode her</label>
+              <textarea id="code-editor" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" aria-describedby="editor-help"></textarea>
+              <div id="editor-help" class="editor-footer"><span>Indryk med 4 mellemrum, når du skriver en løkke.</span><span id="editor-lines">1 linje</span></div>
+              <div class="coding-actions"><button type="button" class="button button-run" id="run-code">▶ Kør kode</button><button type="button" class="button button-yellow button-check" id="check-code">✓ Tjek min løsning</button><button type="button" class="icon-button" id="reset-code" title="Gendan startkode" aria-label="Gendan startkode">↺</button></div>
+            </div>
+            <div class="terminal panel">
+              <div class="terminal-title"><span>TERMINAL</span><button type="button" id="clear-output" class="terminal-clear">Ryd</button></div>
+              <pre id="code-output" aria-live="polite"><span class="terminal-muted">Din udskrift vises her, når du kører koden.</span></pre>
+              <div id="check-feedback" class="check-feedback" aria-live="polite" hidden></div>
+            </div>
+            <div class="task-next"><button type="button" class="text-button" id="prev-task">← Forrige opgave</button><button type="button" class="button button-blue" id="next-task">Næste opgave →</button></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-quiz" id="quiz">
+      <div class="container">
+        <div class="section-heading"><div><p class="section-kicker">DEL 03 / EVALUÉR</p><h2>Hvad har du lært?</h2><p>Ti spørgsmål tester din forståelse. Du får en samlet vurdering og forklaringer på dine svar.</p></div><span class="section-count">10 spørgsmål</span></div>
+        <div class="quiz-shell panel" id="quiz-shell">
+          <div id="quiz-start" class="quiz-start">
+            <div class="quiz-illustration" aria-hidden="true"><span>{</span><strong>?</strong><span>}</span></div>
+            <span class="quiz-overline">KLAR TIL AT TJEKKE DIG SELV?</span>
+            <h3>Tag den afsluttende quiz</h3>
+            <p>Du får 10 spørgsmål om dictionaries, nøgler, værdier, metoder og løkker. Vælg et svar ad gangen. Undervejs kan du se, hvad du mangler at svare på, og du får din feedback til sidst.</p>
+            <div class="quiz-facts"><span>◷ 5–7 min</span><span>◉ 10 spørgsmål</span><span>✓ Forklaringer til alle svar</span></div>
+            <button type="button" class="button button-yellow" id="start-quiz">Start quizzen →</button>
+          </div>
+          <div id="quiz-active" hidden>
+            <div class="quiz-topline"><span id="quiz-step">SPØRGSMÅL 1 AF 10</span><span id="quiz-progress-text">0 %</span></div>
+            <div class="quiz-progress-track"><span id="quiz-progress-fill"></span></div>
+            <div class="quiz-question-tag">VÆLG DET BEDSTE SVAR</div>
+            <h3 id="quiz-question"></h3>
+            <pre id="quiz-code" class="quiz-code" hidden></pre>
+            <div id="quiz-options" class="quiz-options" role="radiogroup" aria-label="Svarmuligheder"></div>
+            <div class="quiz-navigation"><button type="button" class="button button-soft" id="quiz-prev">← Tilbage</button><button type="button" class="button button-blue" id="quiz-next" disabled>Næste spørgsmål →</button></div>
+          </div>
+          <div id="quiz-result" hidden>
+            <div class="result-heading"><span class="result-overline">DIN EVALUERING</span><div class="score-circle"><strong id="quiz-score">0/10</strong><span>rigtige svar</span></div><h3 id="quiz-summary-title"></h3><p id="quiz-summary-text"></p></div>
+            <h4>Gennemgå dine svar</h4><div id="quiz-review"></div>
+            <div class="quiz-result-actions"><button type="button" class="button button-yellow" id="restart-quiz">Prøv quizzen igen ↺</button><a class="button button-soft" href="#traen">Træn videre</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="outro"><div class="container outro-inner"><div><p class="section-kicker">TAG DIN NYE VIDEN MED VIDERE</p><h2>Fra første nøgle til din egen kode.</h2><p>Du behøver ikke kunne det hele udenad. Det vigtigste er, at du kan afprøve en idé, læse resultatet og rette din kode.</p></div><a href="#forside" class="button button-outline">Tilbage til toppen ↑</a></div></section>
+  </main>
+  <footer class="site-footer"><div class="container footer-inner"><span class="footer-brand"><span class="brand-mark small" aria-hidden="true"><span>{</span><span>}</span></span> DictLab<span class="brand-dot">.</span></span><span>Lær Python dictionaries · Dansk træningssite</span><span>Bygget med fokus på at lære ved at gøre.</span></div></footer>
+</body>
+</html>
