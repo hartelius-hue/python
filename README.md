@@ -13,9 +13,9 @@ Et dansk, interaktivt træningssite til voksne begyndere i Python.
 
 Åbn det via GitHub Pages (når Pages er aktiveret), eller start en lokal webserver i projektmappen:
 
-\`\`\`bash
+```bash
 python -m http.server 8000
-\`\`\`
+```
 
 Åbn derefter http://localhost:8000 i browseren.
 
